@@ -25,7 +25,6 @@ public class ActivityController {
 	   @PostMapping
 	    public ResponseEntity<Object> getActivity(@RequestBody String query){
 	        ExecutionResult execute = graphQLService.getGraphQL().execute(query);
-	        System.out.println(execute.getData().toString());
 	        return new ResponseEntity<>(execute, HttpStatus.OK);
 	    }
 	   
