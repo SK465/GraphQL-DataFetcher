@@ -1,0 +1,53 @@
+ 
+ schema{
+ query:Query
+}
+ 
+  
+type Query {
+    findActivity(id: ID!) :  Activity
+}
+ 
+ type Activity{
+    id: ID!
+    visibilityScopekey: String
+    correlationId: String
+    summary: String   
+    comments: String
+    priority: String
+    
+    type: String
+    subType: String
+    channel: String
+    status: Status
+    
+    communication: Communication
+    audit: ActivityAudit
+ }
+ 
+	
+ type Status{
+    status: String
+    statusComments: String
+ }
+ 
+  type Communication{
+    externalEmail: String
+    emailText: String
+    commType: String
+    commFreeText: String
+  }
+  
+ 
+ type ActivityAudit {
+     createdBy: String
+	 updatedBy: String
+}
+ 
+ 
+	
+	
+	
+	
+	
+	
